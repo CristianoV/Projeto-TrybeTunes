@@ -1,8 +1,9 @@
 import React from 'react';
+import Link from 'react-router-dom';
 
 class App extends React.Component {
   render() {
-    return (<p>TrybeTunes</p>);
+    return <Link to="/today"> teste </Link>;
   }
 }
 
