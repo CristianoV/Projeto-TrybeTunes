@@ -7,27 +7,29 @@ import Favorites from './pages/Favorites';
 import Profile from './pages/Profile';
 import ProfileEdit from './pages/ProfileEdit';
 import NotFound from './pages/NotFound';
+import Header from './components/Header';
 
 class App extends React.Component {
   render() {
-    // const pagina = [
-    //   { path: '/', component: Login },
-    //   { path: '/search', component: Search },
-    //   { path: '/album/:id', component: Album },
-    //   { path: '/Favorites', component: Favorites },
-    //   { path: 'Profile', component: Profile },
-    //   { path: "/profile/edit" component: ProfileEdit },
-    //   { path: 'notfound', component: NotFound },
-    // ];
     return (
       <div>
         <Switch>
           <Route exact path="/" component={ Login } />
-          <Route path="/search" component={ Search } />
-          <Route path="/album/:id" component={ Album } />
-          <Route path="/Favorites" component={ Favorites } />
-          <Route exact path="/Profile" component={ Profile } />
-          <Route path="/profile/edit" component={ ProfileEdit } />
+          <Route path="/search" component={ Search }>
+            <Header />
+          </Route>
+          <Route path="/album/:id" component={ Album }>
+            <Header />
+          </Route>
+          <Route path="/Favorites" component={ Favorites }>
+            <Header />
+          </Route>
+          <Route exact path="/Profile" component={ Profile }>
+            <Header />
+          </Route>
+          <Route path="/profile/edit" component={ ProfileEdit }>
+            <Header />
+          </Route>
           <Route component={ NotFound } />
         </Switch>
       </div>
