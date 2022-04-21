@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import searchAlbumsAPI from '../services/searchAlbumsAPI';
-import Loading from './Loading';
 
 class Search extends React.Component {
   constructor() {
@@ -10,7 +9,6 @@ class Search extends React.Component {
     this.state = {
       button: true,
       search: '',
-      loading: '',
       albuns: [],
       artista: '',
     };
@@ -30,11 +28,9 @@ class Search extends React.Component {
   };
 
   buttonClick = async () => {
-    this.setState({ loading: true });
     const { search } = this.state;
     const searchartist = await searchAlbumsAPI(search);
     this.setState({
-      loading: '',
       artista: search,
       albuns: searchartist,
       button: true,
@@ -43,34 +39,29 @@ class Search extends React.Component {
   };
 
   render() {
-    const { button, search, loading, albuns, artista } = this.state;
-    return loading ? (
-      <Loading />
-    ) : (
+    const { button, search, albuns, artista } = this.state;
+    return (
       <div data-testid="page-search">
         <Header />
-        {loading && <Loading />}
-        {!loading && (
-          <form>
-            <input
-              type="text"
-              name="artist"
-              placeholder="Nome do albuns"
-              id="searchArtist"
-              data-testid="search-artist-input"
-              value={ search }
-              onChange={ this.searchartist }
-            />
-            <button
-              type="button"
-              data-testid="search-artist-button"
-              disabled={ button }
-              onClick={ () => this.buttonClick(search) }
-            >
-              Pesquisar
-            </button>
-          </form>
-        )}
+        <form>
+          <input
+            type="text"
+            name="artist"
+            placeholder="Nome do albuns"
+            id="searchArtist"
+            data-testid="search-artist-input"
+            value={ search }
+            onChange={ this.searchartist }
+          />
+          <button
+            type="button"
+            data-testid="search-artist-button"
+            disabled={ button }
+            onClick={ () => this.buttonClick(search) }
+          >
+            Pesquisar
+          </button>
+        </form>
         {albuns[0] && <p>{`Resultado de álbuns de: ${artista}`}</p>}
         {
           artista.length !== 0
