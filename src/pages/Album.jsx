@@ -39,18 +39,22 @@ class Album extends React.Component {
         {albumInformation && (
           <>
             <p data-testid="artist-name">{albumInformation.artistName}</p>
-            <p data-testid="album-name">
-              {albumInformation.collectionName}
-            </p>
+            <p data-testid="album-name">{albumInformation.collectionName}</p>
             <img
               src={ albumInformation.artworkUrl100 }
               alt={ albumInformation.collectionCensoredName }
             />
           </>
         )}
-        {albumInformation.length !== 0 && soundTrack.map((id, index) => (
-          <MusicCard name={ id.trackName } track={ id.previewUrl } key={ index } />
-        ))}
+        {albumInformation.length !== 0
+          && soundTrack.map((id, index) => (
+            <MusicCard
+              name={ id.trackName }
+              music={ id }
+              track={ id.previewUrl }
+              key={ index }
+            />
+          ))}
       </div>
     );
   }
