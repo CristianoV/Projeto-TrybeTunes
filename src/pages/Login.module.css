@@ -1,25 +1,25 @@
-.container{
-    background-color: #0f0e17;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height:100vh;
-    gap: 30px
+.container {
+  align-items: center;
+  background-color: #0f0e17;
+  display: flex;
+  gap: 30px;
+  height: 100vh;
+  justify-content: center;
 }
 
-.container input[type=button] {
-    background-color: #ff8906;
-    color: #fffffe;
+.container input [ type = 'button' ] {
+  background-color: #ff8906;
+  color: #fffffe;
 }
 
-.container input[type=text] {
-    color: #0f0e17;
+.container input [ type = 'text' ] {
+  color: #0f0e17;
 }
 
 .container label {
-    color: #a7a9be;
+  color: #a7a9be;
 }
 
 .container img {
-    height: 70%;
+  height: 70%;
 }

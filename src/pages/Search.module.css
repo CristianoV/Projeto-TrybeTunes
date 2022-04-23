@@ -1,28 +1,28 @@
 .container {
-    background-color: #fffffe;
+  background-color: #fffffe;
 }
+
 .container form {
-    display: flex;
-    justify-content: center;
-    padding-top: 10px;
-    background-color: #fffffe;
-    flex-wrap: wrap;
+  background-color: #fffffe;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 10px;
 }
 
 .container article {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .container aside {
-    border: 1px solid black;
-    width: 20%;
-
+  border: 1px solid black;
+  width: 20%;
 }
 
 .container section p {
-    display: flex;
-    justify-content: center;
-    padding: 20px;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
 }
