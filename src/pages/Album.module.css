@@ -1,0 +1,19 @@
+.container {
+    background-color: #fffffe;
+}
+
+.container p {
+    color: #a7a9be;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.container img {
+    width: 10%;
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import style from './Login.module.css';
 import { createUser } from '../services/userAPI';
 import Loading from './Loading';
 
@@ -35,7 +36,8 @@ export default class Login extends React.Component {
   render() {
     const { button, name, loading } = this.state;
     return loading ? (<Loading />) : (
-      <div data-testid="page-login">
+      <div data-testid="page-login" className={ style.container }>
+        <img src="https://static.vecteezy.com/system/resources/previews/001/208/095/large_2x/music-player-png.png" alt="logo do site" />
         <form>
           <label htmlFor="name">
             Digite o seu nome:

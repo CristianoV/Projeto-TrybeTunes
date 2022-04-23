@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import style from './Album.module.css';
 import Header from '../components/Header';
 import getMusics from '../services/musicsAPI';
 import MusicCard from '../components/MusicCard';
@@ -36,17 +37,18 @@ class Album extends React.Component {
     return (
       <div data-testid="page-album">
         <Header />
-        {albumInformation && (
-          <>
-            <p data-testid="artist-name">{albumInformation.artistName}</p>
-            <p data-testid="album-name">{albumInformation.collectionName}</p>
-            <img
-              src={ albumInformation.artworkUrl100 }
-              alt={ albumInformation.collectionCensoredName }
-            />
-          </>
-        )}
-        {albumInformation.length !== 0
+        <section className={ style.container }>
+          {albumInformation && (
+            <>
+              <p data-testid="artist-name">{albumInformation.artistName}</p>
+              <p data-testid="album-name">{albumInformation.collectionName}</p>
+              <img
+                src={ albumInformation.artworkUrl100 }
+                alt={ albumInformation.collectionCensoredName }
+              />
+            </>
+          )}
+          {albumInformation.length !== 0
           && soundTrack.map((id, index) => (
             <MusicCard
               name={ id.trackName }
@@ -55,6 +57,7 @@ class Album extends React.Component {
               key={ index }
             />
           ))}
+        </section>
       </div>
     );
   }
