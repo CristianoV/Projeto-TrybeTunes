@@ -28,6 +28,7 @@ export default class Login extends React.Component {
 
   buttonClick = async (value) => {
     this.setState({ loading: true });
+    console.log(this.props);
     const { history } = this.props;
     await createUser({ name: value });
     history.push('/search');

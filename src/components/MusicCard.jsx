@@ -28,6 +28,7 @@ class MusicCard extends React.Component {
     const { marcado } = this.state;
     this.setState({ loading: true });
     const { music } = this.props;
+    console.log(music);
     if (marcado) {
       await removeSong(music);
       this.setState({ loading: false, marcado: false });
