@@ -28,7 +28,8 @@ class Search extends React.Component {
     this.setState({ search: target.value }, () => this.validationNumberCaracter());
   };
 
-  buttonClick = async () => {
+  buttonClick = async (event) => {
+    event.preventDefault();
     const { search } = this.state;
     const searchartist = await searchAlbumsAPI(search);
     this.setState({
@@ -49,17 +50,18 @@ class Search extends React.Component {
             <input
               type="text"
               name="artist"
-              placeholder="Nome do albuns"
+              placeholder="Nome do artista"
               id="searchArtist"
               data-testid="search-artist-input"
               value={ search }
               onChange={ this.searchartist }
+              onKeyPress={ (e) => e.key === 'Enter' && this.buttonClick(e) }
             />
             <button
               type="button"
               data-testid="search-artist-button"
               disabled={ button }
-              onClick={ () => this.buttonClick(search) }
+              onClick={ (e) => this.buttonClick(e) }
             >
               Pesquisar
             </button>
