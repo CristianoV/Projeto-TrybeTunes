@@ -13,12 +13,22 @@
 .container article {
   display: flex;
   flex-wrap: wrap;
+  gap: 10px;
   justify-content: center;
 }
 
 .container aside {
   border: 1px solid black;
+  border-radius: 5px;
   width: 20%;
+}
+
+.container aside img {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 30%;
 }
 
 .container section p {
