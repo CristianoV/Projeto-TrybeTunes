@@ -7,7 +7,7 @@
 # Instruções da aplicação
 ### Instalar dependências
 ```
-cd Game-Trivia
+cd Projeto-TrybeTunes
 npm install
 ```
 
