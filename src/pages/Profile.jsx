@@ -6,7 +6,7 @@ class Profile extends React.Component {
     return (
       <div data-testid="page-profile">
         <Header />
-        teste
+        <p>EM CONSTRUÇÃO</p>
       </div>
     );
   }

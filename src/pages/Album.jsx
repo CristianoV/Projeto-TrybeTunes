@@ -35,18 +35,21 @@ class Album extends React.Component {
   render() {
     const { albumInformation, soundTrack } = this.state;
     return (
-      <div data-testid="page-album">
+      <div data-testid="page-album" className={ style.all }>
         <Header />
         <section className={ style.container }>
           {albumInformation && (
-            <>
-              <p data-testid="artist-name">{albumInformation.artistName}</p>
-              <p data-testid="album-name">{albumInformation.collectionName}</p>
+            <header>
               <img
                 src={ albumInformation.artworkUrl100 }
                 alt={ albumInformation.collectionCensoredName }
               />
-            </>
+              <div>
+                <h3>Album</h3>
+                <h1 data-testid="album-name">{albumInformation.collectionName}</h1>
+                <p data-testid="artist-name">{albumInformation.artistName}</p>
+              </div>
+            </header>
           )}
           {albumInformation.length !== 0
           && soundTrack.map((id, index) => (
