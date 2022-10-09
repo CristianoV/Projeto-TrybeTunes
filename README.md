@@ -3,7 +3,7 @@ Projeto TrybeTunes!
 </h1>
 
 ## :books: Contexto
-Esse projeto simula uma Streaming de musicas aonde foi utilizado a api do Itunes para fazer a busca no banco de dados. Me inspirei no aplicativo do spotify para fazer o template do site. Ainda esta em construção e tem bastante coisa para aprimorar.
+Esse projeto simula uma Streaming de musicas aonde foi utilizado a api do Itunes para fazer a busca no banco de dados. Me inspirei no aplicativo do spotify para fazer o template do site. Ainda esta em construção e tem bastante coisa para aprimorar, porem ja esta em funcionamento e ja é possivel escutar as suas musicas!
 
 
 ## :man_technologist: Tecnologias, bibliotecas e arquiteturas usadas
