@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { BsFillHeartFill } from 'react-icons/bs';
+import style from './MCard.module.css';
 import { addSong, getFavoriteSongs, removeSong } from '../services/favoriteSongsAPI';
 import Loading from '../pages/Loading';
 
@@ -42,7 +44,7 @@ class MusicCard extends React.Component {
     const { name, track, music } = this.props;
     const { loading, marcado } = this.state;
     return loading ? <Loading /> : (
-      <>
+      <div className={ style.container }>
         <p>{name}</p>
         <audio data-testid="audio-component" src={ track } controls>
           <track kind="captions" />
@@ -51,7 +53,9 @@ class MusicCard extends React.Component {
           .
         </audio>
         <label htmlFor="favorites">
-          Favorita
+          <span className={ marcado ? style.checked : style.notChecked }>
+            <BsFillHeartFill />
+          </span>
           <input
             type="checkbox"
             name=""
@@ -61,7 +65,7 @@ class MusicCard extends React.Component {
             onClick={ () => this.teste() }
           />
         </label>
-      </>
+      </div>
     );
   }
 }

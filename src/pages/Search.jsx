@@ -43,14 +43,17 @@ class Search extends React.Component {
   render() {
     const { button, search, albuns, artista } = this.state;
     return (
-      <div data-testid="page-search">
+      <div data-testid="page-search" className={ style.all }>
         <Header />
-        <div className={ style.container }>
+        <div
+          className={ albuns.length
+            ? style.container : style.albumEmpty }
+        >
           <form>
             <input
               type="text"
               name="artist"
-              placeholder="Nome do artista"
+              placeholder="O que você quer Ouvir?"
               id="searchArtist"
               data-testid="search-artist-input"
               value={ search }
@@ -67,7 +70,7 @@ class Search extends React.Component {
             </button>
           </form>
           <section>
-            {albuns[0] && <p>{`Resultado de álbuns de: ${artista}`}</p>}
+            {albuns[0] && <h1>{`Melhores resultados de: ${artista}`}</h1>}
             <article>
               {
                 artista.length !== 0

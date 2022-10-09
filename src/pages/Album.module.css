@@ -1,10 +1,38 @@
-.container {
-  background-color: #fffffe;
+.all {
+  display: flex;
 }
 
-.container p {
-  color: #a7a9be;
+.container {
+  background: linear-gradient(180deg, #0f0e17 10%, black 53%);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
 }
+
+.container header {
+  align-items: center;
+  color: white;
+  display: flex;
+  gap: 30px;
+  height: 100%;
+  justify-content: center;
+  margin-top: 30px;
+  width: 100%;
+}
+
+.container header img {
+  height: 160px;
+  width: 160px;
+}
+
+.container h1 {
+  font-size: 70px;
+}
+
+/* .container p {
+  color: #a7a9be;
+} */
 
 section {
   align-items: center;
@@ -14,6 +42,6 @@ section {
   justify-content: center;
 }
 
-.container img {
+/* .container img {
   width: 10%;
-}
+} */
