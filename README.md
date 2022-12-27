@@ -1,6 +1,6 @@
 <h1 align="center">
 Projeto TrybeTunes!
-</h1>
+</h1> 
 
 ![Music Gif](./TrybeTunes.gif)
 
